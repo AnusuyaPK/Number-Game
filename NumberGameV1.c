@@ -174,6 +174,8 @@ int main()
         }
 
         char move;
+        int Movements = 0;
+        printf("Moves: %d",Movements);
         while(1)
         {
             move = getch();
@@ -185,6 +187,8 @@ int main()
                     s.row++;
                     printf("\e[1;1H\e[2J");
                     print_board(board,size);
+                    Movements++;
+                    printf("Moves: %d",Movements);
                 }
                 else
                 {
@@ -199,6 +203,8 @@ int main()
                     s.row--;
                     printf("\e[1;1H\e[2J");
                     print_board(board,size);
+                    Movements++;
+                    printf("Moves: %d",Movements);
                 }
                 else
                 {
@@ -213,6 +219,8 @@ int main()
                     s.col++;
                     printf("\e[1;1H\e[2J");
                     print_board(board,size);
+                    Movements++;
+                    printf("Moves: %d",Movements);
                 }
                 else
                 {
@@ -227,13 +235,15 @@ int main()
                     s.col--;
                     printf("\e[1;1H\e[2J");
                     print_board(board,size);
+                    Movements++;
+                    printf("Moves: %d",Movements);
                 }
                 else
                 {
                     printf("\a");
                 }
             }
-            else if(move == '0')
+            if(move == '0')
             {
                 printf("QUITING...");
                 break;
@@ -244,6 +254,7 @@ int main()
                 printf("YOU WON THE GAME\n");
                 break;
             }
+
         }
     }
     else if(token=='0')
